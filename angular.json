@@ -87,7 +87,10 @@
               "apps/book-clent/tsconfig.app.json",
               "apps/book-clent/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/book-clent/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/book-clent/**"
+            ]
           }
         },
         "test": {
@@ -121,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/book-clent-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/book-clent-e2e/**"]
+            "tsConfig": [
+              "apps/book-clent-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/book-clent-e2e/**"
+            ]
           }
         }
       }
@@ -147,7 +155,10 @@
               "libs/ui/dashboard/tsconfig.lib.json",
               "libs/ui/dashboard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/dashboard/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui/dashboard/**"
+            ]
           }
         },
         "test": {
@@ -185,7 +196,10 @@
               "libs/util/reusable/tsconfig.lib.json",
               "libs/util/reusable/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/util/reusable/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/util/reusable/**"
+            ]
           }
         },
         "test": {
@@ -218,4 +232,3 @@
   },
   "defaultProject": "book-clent"
 }
-

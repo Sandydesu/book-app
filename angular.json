@@ -202,7 +202,8 @@
           "styleext": "scss"
         }
       }
-    },
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
@@ -217,3 +218,4 @@
   },
   "defaultProject": "book-clent"
 }
+

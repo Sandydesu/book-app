@@ -14,6 +14,7 @@ export class SideNavComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    console.log(this);
   }
 
 }

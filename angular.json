@@ -25,7 +25,10 @@
               "apps/book-clent/src/favicon.ico",
               "apps/book-clent/src/assets"
             ],
-            "styles": ["apps/book-clent/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "apps/book-clent/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -123,8 +126,83 @@
           }
         }
       }
-    }
-  },
+    },
+    "ui-dashboard": {
+      "projectType": "library",
+      "root": "libs/ui/dashboard",
+      "sourceRoot": "libs/ui/dashboard/src",
+      "prefix": "book-store",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui/dashboard/tsconfig.lib.json",
+            "project": "libs/ui/dashboard/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/dashboard/tsconfig.lib.json",
+              "libs/ui/dashboard/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/dashboard/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/dashboard/jest.config.js",
+            "tsConfig": "libs/ui/dashboard/tsconfig.spec.json",
+            "setupFile": "libs/ui/dashboard/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "util-reusable": {
+      "projectType": "library",
+      "root": "libs/util/reusable",
+      "sourceRoot": "libs/util/reusable/src",
+      "prefix": "book-store",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/util/reusable/tsconfig.lib.json",
+            "project": "libs/util/reusable/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/util/reusable/tsconfig.lib.json",
+              "libs/util/reusable/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/util/reusable/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/util/reusable/jest.config.js",
+            "tsConfig": "libs/util/reusable/tsconfig.spec.json",
+            "setupFile": "libs/util/reusable/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },

@@ -1,5 +1,18 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side">
-        Sidenav content
-    </mat-sidenav>
-</mat-sidenav-container>
+<mat-drawer-container class="side-nav-container" autosize>
+    <mat-drawer #sidenav class="sidenav-content" mode="side">
+        <mat-list>
+            <mat-list-item>
+                <mat-icon>dashboard</mat-icon>
+                <p>Dashboard</p>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>shopping_cart</mat-icon>
+                <p>Cart</p>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>library_books</mat-icon>
+                <p>My Collection</p>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+</mat-drawer-container>

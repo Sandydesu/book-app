@@ -1,21 +1,19 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { ToggleService } from '@book-store/services';
 @Component({
   selector: 'book-store-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() openOrClose = new EventEmitter();
   isOpend: boolean = false;
-  constructor() { }
+  constructor(private toggleService: ToggleService) { }
 
   ngOnInit() {
   }
 
   openOrCloseSideNav() {
-    this.isOpend = !this.isOpend;
-    this.openOrClose.emit(this.isOpend);
+    this.toggleService.toggleOnOffClick();
   }
 
 }

@@ -87,10 +87,7 @@
               "apps/book-clent/tsconfig.app.json",
               "apps/book-clent/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/book-clent/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/book-clent/**"]
           }
         },
         "test": {
@@ -124,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/book-clent-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/book-clent-e2e/**"
-            ]
+            "tsConfig": ["apps/book-clent-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/book-clent-e2e/**"]
           }
         }
       }
@@ -155,10 +147,7 @@
               "libs/ui/dashboard/tsconfig.lib.json",
               "libs/ui/dashboard/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui/dashboard/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui/dashboard/**"]
           }
         },
         "test": {
@@ -196,10 +185,7 @@
               "libs/util/reusable/tsconfig.lib.json",
               "libs/util/reusable/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/util/reusable/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/util/reusable/**"]
           }
         },
         "test": {
@@ -208,6 +194,44 @@
             "jestConfig": "libs/util/reusable/jest.config.js",
             "tsConfig": "libs/util/reusable/tsconfig.spec.json",
             "setupFile": "libs/util/reusable/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "services": {
+      "projectType": "library",
+      "root": "libs/services",
+      "sourceRoot": "libs/services/src",
+      "prefix": "book-store",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/services/tsconfig.lib.json",
+            "project": "libs/services/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/services/tsconfig.lib.json",
+              "libs/services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/services/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/services/jest.config.js",
+            "tsConfig": "libs/services/tsconfig.spec.json",
+            "setupFile": "libs/services/src/test-setup.ts"
           }
         }
       },

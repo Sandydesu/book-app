@@ -19,6 +19,9 @@
     },
     "util-reusable": {
       "tags": []
+    },
+    "services": {
+      "tags": []
     }
   }
 }

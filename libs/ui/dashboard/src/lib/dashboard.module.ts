@@ -3,8 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { ReusableModule } from '@book-store/util/reusable';
 import { DashboardComponent } from './dashboard.component';
+import { ListComponent } from './list/list.component';
 export const dashboardRoutes: Route[] = [
-  { path: '', pathMatch: "full", component: DashboardComponent }
+  {
+    path: 'store',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'list',
+        component: ListComponent
+      }]
+  },
+  { path: '', pathMatch: "full", redirectTo: '/store/list' }
 ];
 
 @NgModule({
@@ -13,8 +23,8 @@ export const dashboardRoutes: Route[] = [
     ReusableModule,
     RouterModule.forChild(dashboardRoutes)
   ],
-  declarations: [DashboardComponent],
-  exports: [DashboardComponent],
-  entryComponents: [DashboardComponent]
+  declarations: [DashboardComponent, ListComponent],
+  exports: [DashboardComponent, ListComponent],
+  entryComponents: [DashboardComponent, ListComponent]
 })
 export class DashboardModule { }

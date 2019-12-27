@@ -18,7 +18,8 @@
     "paths": {
       "@book-store/ui/dashboard": ["libs/ui/dashboard/src/index.ts"],
       "@book-store/util/reusable": ["libs/util/reusable/src/index.ts"],
-      "@book-store/services": ["libs/services/src/index.ts"]
+      "@book-store/services": ["libs/services/src/index.ts"],
+      "@book-store/store-management": ["libs/store-management/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

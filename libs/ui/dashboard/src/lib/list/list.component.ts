@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StoreFacade } from '@book-store/store-management';
 @Component({
   selector: 'book-store-list',
   templateUrl: './list.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storeFacade: StoreFacade) { }
 
   ngOnInit() {
+    this.storeFacade.loadAll();
+    this.storeFacade.allStore$.subscribe((res) => {
+      console.log(res);
+    });
   }
 
 }

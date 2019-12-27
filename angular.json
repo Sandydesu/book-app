@@ -240,6 +240,44 @@
           "styleext": "scss"
         }
       }
+    },
+    "store-management": {
+      "projectType": "library",
+      "root": "libs/store-management",
+      "sourceRoot": "libs/store-management/src",
+      "prefix": "book-store",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/store-management/tsconfig.lib.json",
+            "project": "libs/store-management/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store-management/tsconfig.lib.json",
+              "libs/store-management/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store-management/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store-management/jest.config.js",
+            "tsConfig": "libs/store-management/tsconfig.spec.json",
+            "setupFile": "libs/store-management/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

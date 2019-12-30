@@ -1,11 +1,27 @@
 .shoping-cart{
-    max-width: 300px;
+    width: 250px;
     text-align: center;
     margin:20px 20px;
     border-radius: 5%;
+    display: inline-block;
+    height: 250px;
+    vertical-align: bottom
 }
 
 .shoping-cart-image{
     width:100px;
-    max-height:100px;
+    height:100px;
+}
+
+.mat-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mat-card-title {
+    font-size: 14px;
+}
+.mat-card-subtitle, .mat-card-content {
+    font-size: 12px;
 }

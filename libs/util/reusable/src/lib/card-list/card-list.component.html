@@ -1,18 +1,18 @@
-<mat-card class="shoping-cart">
+<mat-card class="shoping-cart" *ngFor="let item of items">
     <mat-card-header>
-        <mat-card-title>Angular Momentum</mat-card-title>
-        <mat-card-subtitle>An Illustrated Guide to Rotational Symmetries for Physical Systems</mat-card-subtitle>
+        <mat-card-title>{{item.volumeInfo.title}}</mat-card-title>
+        <mat-card-subtitle>{{item.volumeInfo.subtitle}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image class="shoping-cart-image"
-        src="http://books.google.com/books/content?id=0NMjkQnQN6oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
-        alt="Photo of a Shiba Inu">
+    <img mat-card-sm-image class="shoping-cart-image" src="{{item.volumeInfo.imageLinks.smallThumbnail}}"
+        alt="{{item.volumeInfo.title}}">
     <mat-card-content>
-        <label>Authors : </label>
-        <p><strong>William J. Thompson</strong></p>
-        <p><strong>William J. Thompson</strong></p>
+        <p><strong>{{item.volumeInfo.saleInfo?.listPrice?.amount}}</strong></p>
+        <p><strong>{{item.volumeInfo.authors.join(', ')}}</strong></p>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button color="primary">Add to Cart</button>
-        <button mat-raised-button color="accent">Buy Now</button>
-    </mat-card-actions>
+    <mat-card-footer>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Add to Cart</button>
+            <button mat-raised-button color="accent">Buy Now</button>
+        </mat-card-actions>
+    </mat-card-footer>
 </mat-card>

@@ -6,13 +6,15 @@ import { StoreFacade } from '@book-store/store-management';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  booksList = new Array();
   constructor(private storeFacade: StoreFacade) { }
 
   ngOnInit() {
     this.storeFacade.loadAll();
     this.storeFacade.allStore$.subscribe((res) => {
-      console.log(res);
+      if (res && res['items']) {
+        this.booksList = res['items'];
+      }
     });
   }
 

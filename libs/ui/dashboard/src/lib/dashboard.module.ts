@@ -4,6 +4,7 @@ import { RouterModule, Route } from '@angular/router';
 import { ReusableModule } from '@book-store/util/reusable';
 import { DashboardComponent } from './dashboard.component';
 import { ListComponent } from './list/list.component';
+
 export const dashboardRoutes: Route[] = [
   {
     path: 'store',

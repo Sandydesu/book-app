@@ -18,4 +18,8 @@ export class ListComponent implements OnInit {
     });
   }
 
+  changeText(value){
+    console.log(value);
+  }
+
 }

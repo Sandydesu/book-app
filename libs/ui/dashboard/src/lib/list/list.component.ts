@@ -10,7 +10,6 @@ export class ListComponent implements OnInit {
   constructor(private storeFacade: StoreFacade) { }
 
   ngOnInit() {
-    this.storeFacade.loadAll();
     this.storeFacade.allStore$.subscribe((res) => {
       if (res && res['items']) {
         this.booksList = res['items'];
@@ -18,8 +17,8 @@ export class ListComponent implements OnInit {
     });
   }
 
-  changeText(value){
-    console.log(value);
+  changeText(value) {
+    this.storeFacade.loadAll(value);
   }
 
 }

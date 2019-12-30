@@ -16,7 +16,7 @@ export class StoreEffects {
     StoreActionTypes.LoadStore,
     {
       run: (action: LoadStore, state: StorePartialState) => {
-        return this.booksApiService.getBooks().pipe(
+        return this.booksApiService.getBooks(action.payload).pipe(
           map(res => new StoreLoaded(res))
         )
       },

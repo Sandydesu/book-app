@@ -8,7 +8,7 @@ export class BooksApiService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<any> {
-    return this.http.get<Observable<any>>(`https://www.googleapis.com/books/v1/volumes?q=angular&key=AIzaSyAFZZjSiGNeZgbfNyEm7L0Nq_b3nXPvH84`)
+  getBooks(value): Observable<any> {
+    return this.http.get<Observable<any>>(`https://www.googleapis.com/books/v1/volumes?q=${value}&key=AIzaSyAFZZjSiGNeZgbfNyEm7L0Nq_b3nXPvH84`)
   }
 }

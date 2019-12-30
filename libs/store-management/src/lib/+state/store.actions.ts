@@ -9,6 +9,7 @@ export enum StoreActionTypes {
 
 export class LoadStore implements Action {
   readonly type = StoreActionTypes.LoadStore;
+  constructor(public payload: string) {}
 }
 
 export class StoreLoadError implements Action {

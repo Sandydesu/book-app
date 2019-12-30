@@ -14,7 +14,7 @@ export class StoreFacade {
 
   constructor(private store: Store<StorePartialState>) {}
 
-  loadAll() {
-    this.store.dispatch(new LoadStore());
+  loadAll(value) {
+    this.store.dispatch(new LoadStore(value));
   }
 }

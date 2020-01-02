@@ -13,16 +13,14 @@ export class CardListComponent implements OnInit {
   ngOnInit() {
   }
 
-  showDetails(event, item) {
+  showDetails(item) {
     this.facade.getSelectedItem(item);
     this.route.navigate(['/store/details'], { queryParams: { id: item.id } })
   }
 
   addToCart(event, item) {
-    console.log("hello");
     event.stopPropagation();
     this.facade.addItemToCart(item);
-    console.log(event, 'addtocart');
   }
 
   buyNow(event, item) {

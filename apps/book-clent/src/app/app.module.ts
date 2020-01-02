@@ -7,6 +7,8 @@ import { DashboardModule } from '@book-store/ui/dashboard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreManagementModule } from '@book-store/store-management';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([]),
     StoreManagementModule,
     BrowserAnimationsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

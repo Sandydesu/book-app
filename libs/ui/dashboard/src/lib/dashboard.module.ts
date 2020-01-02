@@ -4,6 +4,7 @@ import { RouterModule, Route } from '@angular/router';
 import { ReusableModule } from '@book-store/util/reusable';
 import { DashboardComponent } from './dashboard.component';
 import { ListComponent } from './list/list.component';
+import { DetailsComponent } from './details/details.component';
 
 export const dashboardRoutes: Route[] = [
   {
@@ -13,6 +14,10 @@ export const dashboardRoutes: Route[] = [
       {
         path: 'list',
         component: ListComponent
+      },
+      {
+        path: 'details',
+        component: DetailsComponent
       }]
   },
   { path: '', pathMatch: "full", redirectTo: '/store/list' }
@@ -24,8 +29,8 @@ export const dashboardRoutes: Route[] = [
     ReusableModule,
     RouterModule.forChild(dashboardRoutes)
   ],
-  declarations: [DashboardComponent, ListComponent],
-  exports: [DashboardComponent, ListComponent],
-  entryComponents: [DashboardComponent, ListComponent]
+  declarations: [DashboardComponent, ListComponent, DetailsComponent],
+  exports: [DashboardComponent, ListComponent, DetailsComponent],
+  entryComponents: [DashboardComponent, ListComponent, DetailsComponent]
 })
 export class DashboardModule { }

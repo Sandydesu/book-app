@@ -25,6 +25,9 @@
     },
     "store-management": {
       "tags": []
+    },
+    "cart": {
+      "tags": []
     }
   }
 }

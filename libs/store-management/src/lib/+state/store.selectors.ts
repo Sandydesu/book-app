@@ -33,9 +33,12 @@ const getSelectedStore = createSelector(
   }
 );
 
+const selectedItem = createSelector(getStoreState, (state: StoreState) => state.selectedItem);
+
 export const storeQuery = {
   getLoaded,
   getError,
   getAllStore,
-  getSelectedStore
+  getSelectedStore,
+  selectedItem
 };

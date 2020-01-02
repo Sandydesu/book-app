@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import {
   MatButtonModule,
   MatCardModule,
@@ -26,7 +27,8 @@ import { TextboxComponent } from './textbox/textbox.component';
     MatInputModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule
   ],
   declarations: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent],
   exports: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent],

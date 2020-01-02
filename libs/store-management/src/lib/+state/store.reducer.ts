@@ -10,10 +10,11 @@ export const STORE_FEATURE_KEY = 'store';
  */
 
 /* tslint:disable:no-empty-interface */
-export interface Entity {}
+export interface Entity { }
 
 export interface StoreState {
   list: Entity[]; // list of Store; analogous to a sql normalized table
+  selectedItem?: Entity;
   selectedId?: string | number; // which Store record has been selected
   loaded: boolean; // has the Store list been loaded
   error?: any; // last none error (if any)
@@ -40,6 +41,12 @@ export function reducer(
         loaded: true
       };
       break;
+    }
+    case StoreActionTypes.SelectedItem: {
+      state = {
+        ...state,
+        selectedItem: action.payload
+      }
     }
   }
   return state;

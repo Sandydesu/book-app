@@ -1,4 +1,4 @@
-<mat-card class="shoping-cart" *ngFor="let item of items">
+<mat-card class="shoping-cart" *ngFor="let item of items" (click)="showDetails($event,item)">
     <mat-card-header>
         <mat-card-title>{{item.volumeInfo.title}}</mat-card-title>
         <mat-card-subtitle>{{item.volumeInfo.subtitle}}</mat-card-subtitle>
@@ -11,8 +11,8 @@
     </mat-card-content>
     <mat-card-footer>
         <mat-card-actions>
-            <button mat-raised-button color="primary">Add to Cart</button>
-            <button mat-raised-button color="accent">Buy Now</button>
+            <button mat-raised-button color="primary" (click)="addToCart($event,item)">Add to Cart</button>
+            <button mat-raised-button color="accent" (click)="BuyNow($event,item)">Buy Now</button>
         </mat-card-actions>
     </mat-card-footer>
 </mat-card>

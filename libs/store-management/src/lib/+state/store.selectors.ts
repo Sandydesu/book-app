@@ -35,10 +35,13 @@ const getSelectedStore = createSelector(
 
 const selectedItem = createSelector(getStoreState, (state: StoreState) => state.selectedItem);
 
+const cartList = createSelector(getStoreState, (state: StoreState) => state.cartList);
+
 export const storeQuery = {
   getLoaded,
   getError,
   getAllStore,
   getSelectedStore,
-  selectedItem
+  selectedItem,
+  cartList
 };

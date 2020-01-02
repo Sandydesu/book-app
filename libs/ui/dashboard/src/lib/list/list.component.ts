@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
         this.booksList = res['items'];
       }
     });
+    
   }
 
   changeText(value) {

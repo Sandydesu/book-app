@@ -19,12 +19,15 @@ export class CardListComponent implements OnInit {
   }
 
   addToCart(event, item) {
+    console.log("hello");
     event.stopPropagation();
+    this.facade.addItemToCart(item);
     console.log(event, 'addtocart');
   }
 
   buyNow(event, item) {
     event.stopPropagation();
+    this.facade.addItemToCart(item);
     this.route.navigate(['/myCart']);
   }
 

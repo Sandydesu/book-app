@@ -5,7 +5,8 @@ export enum StoreActionTypes {
   LoadStore = '[Store] Load Store',
   StoreLoaded = '[Store] Store Loaded',
   StoreLoadError = '[Store] Store Load Error',
-  SelectedItem = '[Store] SelectedItem'
+  SelectedItem = '[Store] SelectedItem',
+  CartAdd = '[Store] Item Added to cart'
 }
 
 export class LoadStore implements Action {
@@ -28,11 +29,17 @@ export class SelectedItem implements Action {
   constructor(public payload: Entity) { }
 }
 
-export type StoreAction = LoadStore | StoreLoaded | StoreLoadError | SelectedItem;
+export class CartAdd implements Action {
+  readonly type = StoreActionTypes.CartAdd;
+  constructor(public payload: Entity) { }
+}
+
+export type StoreAction = LoadStore | StoreLoaded | StoreLoadError | SelectedItem | CartAdd;
 
 export const fromStoreActions = {
   LoadStore,
   StoreLoaded,
   StoreLoadError,
-  SelectedItem
+  SelectedItem,
+  CartAdd
 };

@@ -18,6 +18,7 @@ export interface StoreState {
   selectedId?: string | number; // which Store record has been selected
   loaded: boolean; // has the Store list been loaded
   error?: any; // last none error (if any)
+  cartList: Entity[]
 }
 
 export interface StorePartialState {
@@ -26,6 +27,7 @@ export interface StorePartialState {
 
 export const initialState: StoreState = {
   list: [],
+  cartList: [],
   loaded: false
 };
 
@@ -47,6 +49,14 @@ export function reducer(
         ...state,
         selectedItem: action.payload
       }
+      break;
+    }
+    case StoreActionTypes.CartAdd: {
+      state = {
+        ...state,
+        cartList: [...state.cartList, action.payload]
+      }
+      break;
     }
   }
   return state;

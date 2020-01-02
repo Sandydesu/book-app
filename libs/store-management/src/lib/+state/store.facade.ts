@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 
 import { StorePartialState } from './store.reducer';
 import { storeQuery } from './store.selectors';
-import { LoadStore, SelectedItem } from './store.actions';
+import { LoadStore, SelectedItem, CartAdd } from './store.actions';
 
 @Injectable()
 export class StoreFacade {
@@ -12,6 +12,7 @@ export class StoreFacade {
   allStore$ = this.store.pipe(select(storeQuery.getAllStore));
   selectedStore$ = this.store.pipe(select(storeQuery.getSelectedStore));
   selectedItem$ = this.store.pipe(select(storeQuery.selectedItem));
+  cartList$ = this.store.pipe(select(storeQuery.cartList));
 
   constructor(private store: Store<StorePartialState>) { }
 
@@ -21,5 +22,9 @@ export class StoreFacade {
 
   getSelectedItem(item) {
     this.store.dispatch(new SelectedItem(item));
+  }
+
+  addItemToCart(item) {
+    this.store.dispatch(new CartAdd(item));
   }
 }

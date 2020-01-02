@@ -23,4 +23,9 @@ export class CardListComponent implements OnInit {
     console.log(event, 'addtocart');
   }
 
+  buyNow(event, item) {
+    event.stopPropagation();
+    this.route.navigate(['/myCart']);
+  }
+
 }

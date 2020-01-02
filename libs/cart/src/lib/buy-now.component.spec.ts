@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButNowComponent } from './but-now.component';
+import { BuyNowComponent } from './buy-now.component';
 
 describe('ButNowComponent', () => {
-  let component: ButNowComponent;
-  let fixture: ComponentFixture<ButNowComponent>;
+  let component: BuyNowComponent;
+  let fixture: ComponentFixture<BuyNowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButNowComponent ]
+      declarations: [BuyNowComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButNowComponent);
+    fixture = TestBed.createComponent(BuyNowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

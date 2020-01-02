@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'book-store-but-now',
-  templateUrl: './but-now.component.html',
-  styleUrls: ['./but-now.component.scss']
+  templateUrl: './buy-now.component.html',
+  styleUrls: ['./buy-now.component.scss']
 })
-export class ButNowComponent implements OnInit {
+export class BuyNowComponent implements OnInit {
 
   constructor() { }
 

@@ -16,6 +16,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TextboxComponent } from './textbox/textbox.component';
+import { CustonButtonComponent } from './custon-button/custon-button.component';
 
 @NgModule({
   imports: [
@@ -30,8 +31,8 @@ import { TextboxComponent } from './textbox/textbox.component';
     MatToolbarModule,
     RouterModule
   ],
-  declarations: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent],
-  exports: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent],
-  entryComponents: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent]
+  declarations: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent],
+  exports: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent],
+  entryComponents: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent]
 })
 export class ReusableModule { }

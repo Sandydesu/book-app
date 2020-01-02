@@ -1,1 +1,19 @@
-<p>details works!</p>
+<div *ngIf="selectedItem" class="details-container">
+    <img class="shoping-cart-image" src="{{selectedItem.volumeInfo.imageLinks?.smallThumbnail}}"
+        alt="{{selectedItem.volumeInfo.title}}">
+    <h2>{{selectedItem.volumeInfo.title}}</h2>
+    <h4>{{selectedItem.volumeInfo.subtitle}}</h4>
+    <span>Authors : <strong
+            class="collection-names">{{selectedItem.volumeInfo.authors?.join(', ')}}</strong></span><br />
+    <span>Publisher : <strong class="collection-names">{{selectedItem.volumeInfo.publisher}}</strong></span> <br />
+    <span>Date : {{selectedItem.volumeInfo.publishedDate}}</span><br />
+    <span *ngIf="selectedItem.saleInfo.listPrice?.amount">Price : {{selectedItem.saleInfo.listPrice?.amount}} /
+        {{selectedItem.saleInfo.listPrice?.currencyCode}}</span><br />
+    <span *ngIf="selectedItem.saleInfo.retailPrice?.amount">Discount Price : {{selectedItem.saleInfo.retailPrice?.amount}} /
+        {{selectedItem.saleInfo.retailPrice?.currencyCode}}</span><br />
+    <p class="description"><span class="description-title">Description</span> : {{selectedItem.volumeInfo.description}}</p>
+    <book-store-custon-button [value]="'BuyNow'" [theme]="'primary'" (buttonClick)="buyNow()">
+    </book-store-custon-button>
+    <book-store-custon-button [value]="'AddToCart'" [theme]="'primary'" (buttonClick)="addToCart()">
+    </book-store-custon-button>
+</div>

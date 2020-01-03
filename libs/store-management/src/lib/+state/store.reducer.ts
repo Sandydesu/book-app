@@ -1,5 +1,5 @@
 import { StoreAction, StoreActionTypes } from './store.actions';
-
+import { CartItems, Item } from '@book-store/util/reusable';
 export const STORE_FEATURE_KEY = 'store';
 
 /**
@@ -10,15 +10,17 @@ export const STORE_FEATURE_KEY = 'store';
  */
 
 /* tslint:disable:no-empty-interface */
-export interface Entity { }
+
 
 export interface StoreState {
-  list: Entity[]; // list of Store; analogous to a sql normalized table
-  selectedItem?: Entity;
+  list: Item[]; // list of Store; analogous to a sql normalized table
+  selectedItem?: Item;
   selectedId?: string | number; // which Store record has been selected
   loaded: boolean; // has the Store list been loaded
   error?: any; // last none error (if any)
-  cartList: Entity[]
+  cartList?: {
+    string: CartItems
+  }
 }
 
 export interface StorePartialState {
@@ -27,7 +29,6 @@ export interface StorePartialState {
 
 export const initialState: StoreState = {
   list: [],
-  cartList: [],
   loaded: false
 };
 
@@ -52,9 +53,17 @@ export function reducer(
       break;
     }
     case StoreActionTypes.CartAdd: {
+      const listItems = { ...state.cartList };
+      if (listItems[action.payload.id]) {
+        const obj = { ...listItems[action.payload.id] };
+        obj.count++;
+        listItems[action.payload.id] = obj;
+      } else {
+        listItems[action.payload.id] = action.payload;
+      }
       state = {
         ...state,
-        cartList: [...state.cartList, action.payload]
+        cartList: listItems
       }
       break;
     }

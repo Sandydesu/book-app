@@ -1,6 +1,6 @@
-import { Entity, StoreState } from './store.reducer';
+import { StoreState } from './store.reducer';
 import { storeQuery } from './store.selectors';
-
+import { Item } from '@book-store/util/reusable';
 describe('Store Selectors', () => {
   const ERROR_MSG = 'No Error Available';
   const getStoreId = it => it['id'];
@@ -8,10 +8,27 @@ describe('Store Selectors', () => {
   let storeState;
 
   beforeEach(() => {
-    const createStore = (id: string, name = ''): Entity => ({
-      id,
-      name: name || `name-${id}`
-    });
+    const createStore = (id: string, title = '', subTitle = "",
+      authors = "",
+      image = "",
+      mrpAmount = 0,
+      discountAmount = 0,
+      description = "",
+      publisher = "",
+      publishdate = "",
+      currencyCode = ""): Item => ({
+        id,
+        title: title || `name-${id}`,
+        subTitle,
+        authors,
+        image,
+        mrpAmount,
+        discountAmount,
+        description,
+        publisher,
+        publishdate,
+        currencyCode
+      });
     storeState = {
       store: {
         list: [

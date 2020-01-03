@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Entity } from './store.reducer';
-
+import { CartItems, Item } from '@book-store/util/reusable';
 export enum StoreActionTypes {
   LoadStore = '[Store] Load Store',
   StoreLoaded = '[Store] Store Loaded',
@@ -21,17 +20,17 @@ export class StoreLoadError implements Action {
 
 export class StoreLoaded implements Action {
   readonly type = StoreActionTypes.StoreLoaded;
-  constructor(public payload: Entity[]) { }
+  constructor(public payload: Item[]) { }
 }
 
 export class SelectedItem implements Action {
   readonly type = StoreActionTypes.SelectedItem;
-  constructor(public payload: Entity) { }
+  constructor(public payload: Item) { }
 }
 
 export class CartAdd implements Action {
   readonly type = StoreActionTypes.CartAdd;
-  constructor(public payload: Entity) { }
+  constructor(public payload: CartItems) { }
 }
 
 export type StoreAction = LoadStore | StoreLoaded | StoreLoadError | SelectedItem | CartAdd;

@@ -11,11 +11,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.storeFacade.allStore$.subscribe((res) => {
-      if (res && res['items']) {
-        this.booksList = res['items'];
-      }
+      this.booksList = res;
     });
-    
   }
 
   changeText(value) {

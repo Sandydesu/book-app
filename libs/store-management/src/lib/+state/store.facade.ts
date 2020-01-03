@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { StorePartialState } from './store.reducer';
 import { storeQuery } from './store.selectors';
 import { LoadStore, SelectedItem, CartAdd } from './store.actions';
-
+import { CartItems,Item } from '@book-store/util/reusable';
 @Injectable()
 export class StoreFacade {
   loaded$ = this.store.pipe(select(storeQuery.getLoaded));
@@ -20,11 +20,11 @@ export class StoreFacade {
     this.store.dispatch(new LoadStore(value));
   }
 
-  getSelectedItem(item) {
+  getSelectedItem(item:Item) {
     this.store.dispatch(new SelectedItem(item));
   }
 
-  addItemToCart(item) {
+  addItemToCart(item: CartItems) {
     this.store.dispatch(new CartAdd(item));
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { StoreFacade } from '@book-store/store-management';
+import { Item } from '../items-constants';
 @Component({
   selector: 'book-store-card-list',
   templateUrl: './card-list.component.html',
@@ -13,19 +14,35 @@ export class CardListComponent implements OnInit {
   ngOnInit() {
   }
 
-  showDetails(item) {
+  showDetails(item: Item) {
     this.facade.getSelectedItem(item);
     this.route.navigate(['/store/details'], { queryParams: { id: item.id } })
   }
 
-  addToCart(event, item) {
+  addToCart(event, item: Item) {
     event.stopPropagation();
-    this.facade.addItemToCart(item);
+    const cartItem = {
+      id: item.id,
+      title: item.title,
+      authors: item.authors,
+      image: item.image,
+      amount: item.mrpAmount,
+      count: 1
+    }
+    this.facade.addItemToCart(cartItem);
   }
 
-  buyNow(event, item) {
+  buyNow(event, item: Item) {
     event.stopPropagation();
-    this.facade.addItemToCart(item);
+    const cartItem = {
+      id: item.id,
+      title: item.title,
+      authors: item.authors,
+      image: item.image,
+      amount: item.mrpAmount,
+      count: 1
+    }
+    this.facade.addItemToCart(cartItem);
     this.route.navigate(['/myCart']);
   }
 

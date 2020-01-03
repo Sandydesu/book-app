@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreFacade } from '@book-store/store-management';
-import { timingSafeEqual } from 'crypto';
 @Component({
   selector: 'cart-cart-list',
   templateUrl: './cart-list.component.html',

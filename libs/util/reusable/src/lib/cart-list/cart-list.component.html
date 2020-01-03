@@ -1,0 +1,13 @@
+<mat-card class="shoping-cart" *ngFor="let item of items">
+    <mat-card-header>
+        <mat-checkbox [checked]="true" (change)="unselectForBuy(item)"></mat-checkbox>
+        <mat-card-title>{{item.volumeInfo.title}}</mat-card-title>
+        <mat-card-subtitle>{{item.volumeInfo.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-sm-image class="shoping-cart-image" src="{{item.volumeInfo.imageLinks?.smallThumbnail}}"
+        alt="{{item.volumeInfo.title}}">
+    <mat-card-content>
+        <p><strong>{{item.saleInfo?.listPrice?.amount}}</strong></p>
+        <p><strong>{{item.volumeInfo.authors?.join(', ')}}</strong></p>
+    </mat-card-content>
+</mat-card>

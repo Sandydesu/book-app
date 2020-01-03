@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import {
   MatButtonModule,
   MatCardModule,
+  MatCheckboxModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -17,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TextboxComponent } from './textbox/textbox.component';
 import { CustonButtonComponent } from './custon-button/custon-button.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 @NgModule({
   imports: [
@@ -24,6 +26,7 @@ import { CustonButtonComponent } from './custon-button/custon-button.component';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -31,8 +34,8 @@ import { CustonButtonComponent } from './custon-button/custon-button.component';
     MatToolbarModule,
     RouterModule
   ],
-  declarations: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent],
-  exports: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent],
-  entryComponents: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent]
+  declarations: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent, CartListComponent],
+  exports: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent, CartListComponent],
+  entryComponents: [CardListComponent, HeaderComponent, SideNavComponent, TextboxComponent, CustonButtonComponent, CartListComponent]
 })
 export class ReusableModule { }

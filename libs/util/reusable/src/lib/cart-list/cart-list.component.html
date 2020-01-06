@@ -1,5 +1,4 @@
 <mat-card class="shoping-cart" *ngFor="let item of items">
-    <img mat-card-sm-image class="shoping-cart-image" src="{{item.image}}" alt="{{item.title}}">
     <mat-card-header>
         <mat-checkbox [checked]="true" (change)="unselectForBuy(item)"></mat-checkbox>
         <mat-card-title>{{item.title}}</mat-card-title>

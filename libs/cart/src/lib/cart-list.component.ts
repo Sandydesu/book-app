@@ -9,6 +9,7 @@ import { CartItems } from '@book-store/util/reusable';
 export class CartListComponent implements OnInit, OnDestroy {
   list: CartItems[];
   amount: number = 0;
+  items: number = 0;
   cartList;
   constructor(private facade: StoreFacade) { }
 
@@ -18,14 +19,15 @@ export class CartListComponent implements OnInit, OnDestroy {
         const keys = Object.keys(items);
         this.list = keys.map(key => items[key]);
         this.list.forEach((item) => {
-          this.amount = this.amount + (item.count * item.amount);
-        })
-        console.log(this.amount);
+          const bookAmount = item.count * item.amount;
+          this.amount = Math.round(this.amount + bookAmount);
+          this.items += item.count;
+        });
       }
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.cartList.unsubscribe();
   }
 }

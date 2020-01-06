@@ -1,4 +1,11 @@
 .cart-details{
     height:90%;
     overflow: auto;
+    float: left;
+}
+.cart-amount{
+    position: absolute;
+    width:350px;
+    right:20px;
+    top:100px;
 }

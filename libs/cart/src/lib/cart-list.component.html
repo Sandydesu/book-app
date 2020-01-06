@@ -2,3 +2,6 @@
 <div class="cart-details">
     <book-store-cart-list [items]="list"></book-store-cart-list>
 </div>
+<div class="cart-amount" *ngIf="list">
+    <book-store-price-details-card [amount]="amount" [items]="items"></book-store-price-details-card>
+</div>

@@ -13,7 +13,7 @@ export class StoreFacade {
   selectedStore$ = this.store.pipe(select(storeQuery.getSelectedStore));
   selectedItem$ = this.store.pipe(select(storeQuery.selectedItem));
   cartList$ = this.store.pipe(select(storeQuery.cartList));
-
+  myCollections$ = this.store.pipe(select(storeQuery.myCollectionList));
   constructor(private store: Store<StorePartialState>) { }
 
   loadAll(value) {

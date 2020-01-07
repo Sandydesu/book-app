@@ -5,6 +5,7 @@ import { ReusableModule } from '@book-store/util/reusable';
 import { DashboardComponent } from './dashboard.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
+import { MyCollectionsComponent } from './my-collections/my-collections.component';
 
 export const dashboardRoutes: Route[] = [
   {
@@ -18,7 +19,12 @@ export const dashboardRoutes: Route[] = [
       {
         path: 'details',
         component: DetailsComponent
-      }]
+      },
+      {
+        path: 'my-collections',
+        component: MyCollectionsComponent
+      }
+    ]
   },
   { path: '', pathMatch: "full", redirectTo: '/store/list' }
 ];
@@ -29,8 +35,8 @@ export const dashboardRoutes: Route[] = [
     ReusableModule,
     RouterModule.forChild(dashboardRoutes)
   ],
-  declarations: [DashboardComponent, ListComponent, DetailsComponent],
-  exports: [DashboardComponent, ListComponent, DetailsComponent],
-  entryComponents: [DashboardComponent, ListComponent, DetailsComponent]
+  declarations: [DashboardComponent, ListComponent, DetailsComponent, MyCollectionsComponent],
+  exports: [DashboardComponent, ListComponent, DetailsComponent, MyCollectionsComponent],
+  entryComponents: [DashboardComponent, ListComponent, DetailsComponent, MyCollectionsComponent]
 })
 export class DashboardModule { }

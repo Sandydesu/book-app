@@ -21,7 +21,7 @@ export interface StoreState {
   cartList: {
     string: CartItems
   },
-  collections: CartItems[]
+  myCollections: CartItems[]
 }
 
 export interface StorePartialState {
@@ -31,7 +31,7 @@ export interface StorePartialState {
 export const initialState: StoreState = {
   list: [],
   loaded: false,
-  collections: [],
+  myCollections: [],
   cartList: null
 };
 
@@ -73,7 +73,7 @@ export function reducer(
     case StoreActionTypes.CollectionsAdd: {
       state = {
         ...state,
-        collections: [...state.collections, ...action.payload]
+        myCollections: [...state.myCollections, ...action.payload]
       }
       break;
     }

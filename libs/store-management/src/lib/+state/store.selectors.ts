@@ -6,7 +6,7 @@ const getStoreState = createFeatureSelector<StoreState>(STORE_FEATURE_KEY);
 
 const getLoaded = createSelector(
   getStoreState,
-  (state: StoreState) => state.loaded
+  (state: StoreState) => { console.log(state); return state.loaded }
 );
 const getError = createSelector(
   getStoreState,
@@ -37,7 +37,9 @@ const selectedItem = createSelector(getStoreState, (state: StoreState) => state.
 
 const cartList = createSelector(getStoreState, (state: StoreState) => state.cartList);
 
-const collectionList = createSelector(getStoreState, (state: StoreState) => state.collections);
+const myCollectionList = createSelector(
+  getStoreState,
+  (state: StoreState) => state.myCollections);
 
 export const storeQuery = {
   getLoaded,
@@ -46,5 +48,5 @@ export const storeQuery = {
   getSelectedStore,
   selectedItem,
   cartList,
-  collectionList
+  myCollectionList
 };

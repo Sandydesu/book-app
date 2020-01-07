@@ -1,21 +1,21 @@
 <mat-drawer-container class="side-nav-container" autosize>
     <mat-drawer #sidenav class="sidenav-content" mode="side">
         <mat-list>
-            <mat-list-item>
+            <mat-list-item [routerLink]="['/']">
                 <mat-icon>dashboard</mat-icon>
                 <p>Dashboard</p>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item [routerLink]="['/myCart']">
                 <mat-icon>shopping_cart</mat-icon>
                 <p>Cart</p>
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item [routerLink]="['/store/my-collections']">
                 <mat-icon>library_books</mat-icon>
                 <p>My Collection</p>
             </mat-list-item>
         </mat-list>
     </mat-drawer>
-    <mat-drawer-content >
+    <mat-drawer-content>
         <ng-content></ng-content>
     </mat-drawer-content>
 </mat-drawer-container>

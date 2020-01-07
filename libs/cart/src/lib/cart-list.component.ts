@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StoreFacade } from '@book-store/store-management';
 import { CartItems } from '@book-store/util/reusable';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'cart-cart-list',
   templateUrl: './cart-list.component.html',
@@ -11,7 +13,7 @@ export class CartListComponent implements OnInit, OnDestroy {
   amount: number = 0;
   items: number = 0;
   cartList;
-  constructor(private facade: StoreFacade) { }
+  constructor(private facade: StoreFacade, private route:Router) { }
 
   ngOnInit() {
     this.cartList = this.facade.cartList$.subscribe((items) => {
@@ -27,7 +29,15 @@ export class CartListComponent implements OnInit, OnDestroy {
     });
   }
 
+  addToMyCollection() {
+    this.facade.updateCart(null);
+    this.facade.addCollections(this.list);
+    this.route.navigate(['/']);
+  }
+
   ngOnDestroy() {
     this.cartList.unsubscribe();
+    this.cartList = null;
   }
+
 }

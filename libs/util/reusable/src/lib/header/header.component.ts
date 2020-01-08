@@ -6,7 +6,7 @@ import { ToggleService } from '@book-store/services';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isOpend: boolean = false;
+  isOpend = false;
   constructor(private toggleService: ToggleService) { }
 
   ngOnInit() {

@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { StorePartialState } from './store.reducer';
 import { storeQuery } from './store.selectors';
 import { LoadStore, SelectedItem, CartAdd, CollectionsAdd, UpdateCartList } from './store.actions';
-import { CartItems, Item } from '@book-store/util/reusable';
+import { CartItems, Item } from '../items-constants';
 @Injectable()
 export class StoreFacade {
   loaded$ = this.store.pipe(select(storeQuery.getLoaded));

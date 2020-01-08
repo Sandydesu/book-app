@@ -1,6 +1,6 @@
 import { StoreState } from './store.reducer';
 import { storeQuery } from './store.selectors';
-import { Item } from '@book-store/util/reusable';
+import { Item } from '../items-constants';
 describe('Store Selectors', () => {
   const ERROR_MSG = 'No Error Available';
   const getStoreId = it => it['id'];

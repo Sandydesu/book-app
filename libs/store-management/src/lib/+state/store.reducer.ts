@@ -1,5 +1,5 @@
 import { StoreAction, StoreActionTypes } from './store.actions';
-import { CartItems, Item } from '@book-store/util/reusable';
+import { CartItems, Item } from '../items-constants';
 export const STORE_FEATURE_KEY = 'store';
 
 /**

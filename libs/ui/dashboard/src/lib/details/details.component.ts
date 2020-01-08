@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StoreFacade } from '@book-store/store-management';
-import { Item, CartItems } from '@book-store/util/reusable';
+import { StoreFacade, Item, CartItems  } from '@book-store/store-management';
 @Component({
   selector: 'book-store-details',
   templateUrl: './details.component.html',

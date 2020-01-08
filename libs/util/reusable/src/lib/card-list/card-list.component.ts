@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { StoreFacade } from '@book-store/store-management';
-import { Item } from '../items-constants';
+import { StoreFacade, Item } from '@book-store/store-management';
 @Component({
   selector: 'book-store-card-list',
   templateUrl: './card-list.component.html',

@@ -1,17 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { StoreFacade } from '@book-store/store-management';
-import { CartItems } from '@book-store/util/reusable';
+import { StoreFacade,CartItems } from '@book-store/store-management';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'cart-cart-list',
+  selector: 'book-store-cart-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss']
 })
 export class CartListComponent implements OnInit, OnDestroy {
   list: CartItems[];
-  amount: number = 0;
-  items: number = 0;
+  amount = 0;
+  items = 0;
   cartList;
   constructor(private facade: StoreFacade, private route:Router) { }
 

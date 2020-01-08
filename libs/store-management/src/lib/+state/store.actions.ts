@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { CartItems, Item } from '@book-store/util/reusable';
+import { CartItems, Item } from '../items-constants';
 export enum StoreActionTypes {
   LoadStore = '[Store] Load Store',
   StoreLoaded = '[Store] Store Loaded',

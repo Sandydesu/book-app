@@ -9,7 +9,6 @@ import {
   StoreActionTypes
 } from './store.actions';
 import { BooksApiService } from '@book-store/services';
-import { Item } from '@book-store/util/reusable';
 import { map } from 'rxjs/operators'
 @Injectable()
 export class StoreEffects {
@@ -19,7 +18,7 @@ export class StoreEffects {
       run: (action: LoadStore, state: StorePartialState) => {
         return this.booksApiService.getBooks(action.payload).pipe(
           map(res => {
-            let booksList = res.items.map(item => {
+            const booksList = res.items.map(item => {
               return {
                 id: item.id,
                 title: item.volumeInfo.title,

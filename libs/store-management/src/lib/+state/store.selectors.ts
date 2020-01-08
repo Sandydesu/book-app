@@ -6,7 +6,7 @@ const getStoreState = createFeatureSelector<StoreState>(STORE_FEATURE_KEY);
 
 const getLoaded = createSelector(
   getStoreState,
-  (state: StoreState) => { console.log(state); return state.loaded }
+  (state: StoreState) =>  state.loaded 
 );
 const getError = createSelector(
   getStoreState,
